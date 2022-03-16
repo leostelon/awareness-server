@@ -1,0 +1,56 @@
+ADD HOTEL
+route: /users
+method: POST
+body : {
+"phone_number":"9989384309",
+"hotel_name":"test"
+}
+
+GET HOTEL
+route: /users/phone_number
+method: GET
+ex : /users/9989384309
+
+Output :
+if( found )
+{
+"\_id": "6156dfd4378afedfc52f51a8",
+"phone_number": "9989384309",
+"hotel_name": "test",
+"createdAt": "2021-10-01T10:15:48.766Z",
+"updatedAt": "2021-10-01T10:15:48.766Z",
+"\_\_v": 0,
+"status": true
+}
+
+if( !found )
+{
+"message": "Invalid number",
+"status": false,
+"number": "9989384300"
+}
+
+DELETE HOTEL
+route: /users/phone_number
+method: DELETE
+ex : /users/9989384309
+
+Output :
+if( found )
+{
+"\_id": "6156dfd4378afedfc52f51a8",
+"phone_number": "9989384309",
+"hotel_name": "test",
+"message": "Hotel has been deleted"
+"createdAt": "2021-10-01T10:15:48.766Z",
+"updatedAt": "2021-10-01T10:15:48.766Z",
+"\_\_v": 0,
+"status": true
+}
+
+if( !found )
+{
+"message": "Invalid number",
+"status": false,
+"number": "9989384300"
+}
